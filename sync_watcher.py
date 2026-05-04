@@ -19,6 +19,11 @@ import logging
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("Skipping optional module 'dotenv' - set environment variables manually or install with 'pip install python-dotenv' for .env support.")
 
 # ---------------------------------------------
 # CONFIG - edit these or set as environment variables
